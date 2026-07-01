@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Header, Footer, Input, Static, ScrollView
-from textual.containers import Container
+from textual.widgets import Header, Footer, Input, Static
+from textual.containers import Container, VerticalScroll
 from rich.console import RenderableType
 from rich.markdown import Markdown
 import asyncio
@@ -48,7 +48,7 @@ class TCODERApp(App):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield ScrollView(id="chat-scroll")
+        yield VerticalScroll(id="chat-scroll")
         yield Container(Input(placeholder="Type your message here...", id="chat-input"), id="input-container")
         yield Footer()
 
@@ -61,7 +61,7 @@ class TCODERApp(App):
         user_message = Message(role=MessageRole.USER, content=event.value)
         self.memory.add_message(user_message)
 
-        chat_scroll = self.query_one("#chat-scroll", ScrollView)
+        chat_scroll = self.query_one("#chat-scroll", VerticalScroll)
         chat_scroll.mount(ChatMessage(user_message))
 
         event.input.value = ""

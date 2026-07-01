@@ -3,7 +3,7 @@ name = "tcoder"
 version = "0.1.0"
 description = "Production-Grade AI Coding Agent for Linux"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
     {name = "TCODER Team", email = "tcoder@example.com"}
@@ -27,7 +27,8 @@ dependencies = [
     "sqlalchemy>=2.0.36",
     "keyring>=25.5.0",
     "loguru>=0.7.3",
-    "toml>=0.10.2",
+    "tomli>=2.0.1; python_version < '3.11'",
+    "tomli-w>=1.0.0",
     "pygit2>=1.17.0",
 ]
 
