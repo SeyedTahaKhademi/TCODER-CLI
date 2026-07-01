@@ -6,6 +6,7 @@ from tcoder.config import ConfigManager
 from tcoder.security import KeyManager
 from tcoder.providers import get_provider_class, PROVIDER_REGISTRY
 from tcoder.core.models import ProviderConfig, Message, MessageRole
+from tcoder.ui import run_interactive_ui
 
 app = typer.Typer(
     name="tcoder",
@@ -97,6 +98,13 @@ def doctor():
     console.print("[bold]TCODER Doctor[/bold]")
     console.print("  ✅ Python version: [green]OK[/green]")
     console.print("  ✅ Config directory: [green]OK[/green]")
+
+
+@app.callback(invoke_without_command=True)
+def main(ctx: typer.Context):
+    """Run TCODER in interactive mode if no command is specified."""
+    if ctx.invoked_subcommand is None:
+        run_interactive_ui()
 
 
 if __name__ == "__main__":
