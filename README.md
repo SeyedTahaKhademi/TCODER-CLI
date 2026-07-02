@@ -62,16 +62,7 @@ pip install -e .
 
 Project documentation is currently maintained in this repository.
 
-## Releases
 
-GitHub releases are created from version tags.
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-When a `v*` tag is pushed, GitHub Actions builds the Python package and creates a GitHub Release with the generated `dist` artifacts attached.
 
 ## Contributing
 
