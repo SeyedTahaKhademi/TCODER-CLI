@@ -4,6 +4,19 @@
 
 TCODER is a fully-featured AI software engineering assistant that runs entirely inside Linux terminals. It supports multiple LLM providers, secure API key management, Git integration, and much more!
 
+## معرفی فارسی
+
+TCODER یک دستیار برنامه‌نویسی مبتنی بر هوش مصنوعی برای ترمینال لینوکس است. این ابزار برای کارهای روزمره توسعه مثل گفت‌وگو با مدل‌های زبانی، مدیریت امن کلیدهای API، کار با Git، بررسی کد، تولید مستندات و اجرای ابزارهای کمکی طراحی شده است.
+
+### قابلیت‌ها
+
+- پشتیبانی از چند Provider مثل OpenAI، Anthropic، Gemini، OpenRouter، Groq، DeepSeek، Mistral و مدل‌های محلی مثل Ollama
+- نگهداری امن کلیدهای API با keychain سیستم‌عامل و ذخیره‌سازی محلی رمزگذاری‌شده
+- رابط تعاملی ترمینال با Textual و خروجی خوانا با Rich
+- معماری ماژولار برای توسعه ساده‌تر agentها، providerها و ابزارها
+- قابلیت‌های Git برای توضیح diff، کمک به commit و بررسی تغییرات
+- سیستم حافظه برای session، پروژه، مکالمه و خلاصه‌سازی خودکار
+
 ## Features
 
 - **Provider Agnostic**: Supports OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, and local options like Ollama, vLLM, and LM Studio
@@ -23,8 +36,8 @@ pip install tcoder
 
 ### From source
 ```bash
-git clone https://github.com/tcoder-ai/tcoder.git
-cd tcoder
+git clone https://github.com/SeyedTahaKhademi/TCODER-CLI.git
+cd TCODER-CLI
 pip install -e .
 ```
 
@@ -47,7 +60,29 @@ pip install -e .
 
 ## Documentation
 
-Full documentation can be found [here](https://tcoder.ai/docs)
+Project documentation is currently maintained in this repository.
+
+## Releases
+
+GitHub releases are created from version tags.
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+When a `v*` tag is pushed, GitHub Actions builds the Python package and creates a GitHub Release with the generated `dist` artifacts attached.
+
+## انتشار نسخه جدید
+
+برای ساخت release جدید، نسخه را در `pyproject.toml` و `tcoder/__init__.py` به‌روز کن، سپس یک tag با فرمت `vX.Y.Z` بساز و push کن:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+بعد از push شدن tag، workflow ریلیز اجرا می‌شود و فایل‌های build شده را در GitHub Release قرار می‌دهد.
 
 ## Contributing
 
@@ -56,4 +91,3 @@ We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md)
 ## License
 
 MIT License - see [LICENSE](./LICENSE) for details.
-# TCODER-CLI
