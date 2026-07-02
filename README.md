@@ -73,17 +73,6 @@ git push origin v0.1.0
 
 When a `v*` tag is pushed, GitHub Actions builds the Python package and creates a GitHub Release with the generated `dist` artifacts attached.
 
-## انتشار نسخه جدید
-
-برای ساخت release جدید، نسخه را در `pyproject.toml` و `tcoder/__init__.py` به‌روز کن، سپس یک tag با فرمت `vX.Y.Z` بساز و push کن:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-بعد از push شدن tag، workflow ریلیز اجرا می‌شود و فایل‌های build شده را در GitHub Release قرار می‌دهد.
-
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) to get started.
